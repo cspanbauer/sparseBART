@@ -1,19 +1,22 @@
 /*
- *  sparse BART: Bayesian Additive Regression Trees w/ Sparsity
+ *  sparseBART: sparse Bayesian Additive Regression Trees
  *  Copyright (C) 2021 Charles Spanbauer
- *  This program is free software; you can redistribute it and/or modify
+ *
+ *  This file is part of sparseBART.
+ *
+ *  sparseBART is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation; version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  sparseBART is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, a copy is available at
- *  https://www.R-project.org/Licenses/GPL-2
+ *  along with sparseBART; if not, a copy is available at
+ *  https://www.R-project.org/Licenses/GPL-3
  */
 
 
@@ -225,7 +228,7 @@ void vs::draw_s_ln(std::vector<size_t>& nv, std::vector<double>& lpv, rn &gen)
   // Draw annotation beta
   if(noan!=0&!lasso){
     mm betaVar = ((bprvar*an.transpose()*an+tau2*Eigen::MatrixXd::Identity(noan,noan))/(tau2*bprvar)).inverse();
-    vm betaMean = betaVar*((1/tau2)*an.transpose()*psi);
+    vm betaMean = betaVar*((1.0/tau2)*an.transpose()*psi);
     vm Zscores;
     Zscores.resize(noan);
     for(size_t t=0;t<noan;t++){

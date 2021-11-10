@@ -2,13 +2,13 @@ Package: sparseBART
 Type: Package
 Title: Bayesian Additive Regression Trees w/ 
         Selection
-Version: 1.0
+Version: 1.1
 Date: 2021-05-13
 Authors@R: person('Charles', 'Spanbauer', role='aut', email='spanb008@umn.edu')
 Author: Charles Spanbauer [aut,cre],
 Maintainer: Charles Spanbauer <spanb008@umn.edu>
 Description: Bayesian Additive Regression Trees (BART) for sparse (large-p) data. The traditional formulation of the prior can be too inflexible so this package offers two alternative priors: the Dirichlet prior of Linero (2018) and the logit normal prior of Spanbauer (2021). 
-License: GPL (>= 2)
+License: GPL (>= 3)
 Depends: R (>= 3.6), nlme, nnet, survival, randomForest
 Imports: Rcpp (>= 0.12.3), parallel, tools
 LinkingTo: Rcpp, RcppEigen
